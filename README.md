@@ -3,6 +3,9 @@
 Pathetic is a simple and intuitive backwards-compatible up-to-date pathfinding API for Spigot and forks.
 See more info here: https://www.spigotmc.org/threads/how-pathetic.578998/#post-4644823
 
+Note on our Fork: We use paper plugins and these are expected to not be remapped on 1.20.5 or later.
+Therefore, we have modified the plugin to build with paper userdev and get a non-remapped jar.
+
 ### How to import
 
 #### Maven

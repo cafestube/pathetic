@@ -1,14 +1,13 @@
 package org.patheloper.nms.v1_20_R4;
 
-import net.minecraft.server.level.WorldServer;
-import net.minecraft.world.level.block.state.IBlockData;
-import net.minecraft.world.level.chunk.DataPaletteBlock;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.chunk.PalettedContainer;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import org.bukkit.ChunkSnapshot;
 import org.bukkit.World;
 import org.bukkit.block.BlockState;
-import org.bukkit.craftbukkit.v1_20_R4.CraftChunk;
-import org.bukkit.craftbukkit.v1_20_R4.CraftWorld;
+import org.bukkit.craftbukkit.CraftChunk;
+import org.bukkit.craftbukkit.CraftWorld;
 import org.patheloper.api.snapshot.NMSInterface;
 
 import java.lang.reflect.Field;
@@ -31,20 +30,18 @@ public class OneTwentyFourNMSInterface implements NMSInterface {
   public ChunkSnapshot getSnapshot(World world, int chunkX, int chunkZ) {
     try {
 
-      WorldServer server = ((CraftWorld) world).getHandle();
+      ServerLevel server = ((CraftWorld) world).getHandle();
       CraftChunk newCraftChunk = new CraftChunk(server, chunkX, chunkZ);
 
-      server.l().a(chunkX, chunkZ, ChunkStatus.n, true);
-      DataPaletteBlock<IBlockData> dataDataPaletteBlock =
-          (DataPaletteBlock<IBlockData>) blockIDField.get(newCraftChunk);
+      server.getChunkSource().getChunk(chunkX, chunkZ, ChunkStatus.FULL, true);
+      PalettedContainer<BlockState> dataDataPaletteBlock = (PalettedContainer<BlockState>) blockIDField.get(newCraftChunk);
 
-      dataDataPaletteBlock.b();
-      dataDataPaletteBlock.a();
+      dataDataPaletteBlock.release();
+      dataDataPaletteBlock.acquire();
       ChunkSnapshot chunkSnapshot = newCraftChunk.getChunkSnapshot();
-      dataDataPaletteBlock.b();
+      dataDataPaletteBlock.release();
 
       return chunkSnapshot;
-
     } catch (IllegalAccessException e) {
       e.printStackTrace();
       return null;
