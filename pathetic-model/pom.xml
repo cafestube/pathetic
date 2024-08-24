@@ -6,7 +6,7 @@
 
     <parent>
         <artifactId>pathetic-main</artifactId>
-        <groupId>org.patheloper</groupId>
+        <groupId>org.patheloper.cafestube</groupId>
         <version>2.4.6</version>
     </parent>
 
@@ -81,13 +81,13 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.patheloper</groupId>
+            <groupId>org.patheloper.cafestube</groupId>
             <artifactId>pathetic-api</artifactId>
             <version>2.4.6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.patheloper</groupId>
+            <groupId>org.patheloper.cafestube</groupId>
             <artifactId>pathetic-nms</artifactId>
             <version>2.4.6</version>
             <scope>compile</scope>

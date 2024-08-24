@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.patheloper</groupId>
+    <groupId>org.patheloper.cafestube</groupId>
     <artifactId>pathetic-main</artifactId>
     <packaging>pom</packaging>
     <version>2.4.6</version>
@@ -20,23 +20,16 @@
         <module>pathetic-example</module>
         <module>pathetic-mapping</module>
         <module>pathetic-nms</module>
-        <module>pathetic-nms/v1_21</module>
-        <module>pathetic-nms/v1_20_R4</module>
-        <module>pathetic-nms/v1_20_R3</module>
-        <module>pathetic-nms/v1_20_R2</module>
-        <module>pathetic-nms/v1_20_R1</module>
-        <module>pathetic-nms/v1_19_R3</module>
-        <module>pathetic-nms/v1_19_R2</module>
-        <module>pathetic-nms/v1_18_R2</module>
-        <module>pathetic-nms/v1_18</module>
-        <module>pathetic-nms/v1_17</module>
-        <module>pathetic-nms/v1_16</module>
-        <module>pathetic-nms/v1_15</module>
-        <module>pathetic-nms/v1_12</module>
-        <module>pathetic-nms/v1_8</module>
         <module>pathetic-model</module>
         <module>pathetic-nms/paper</module>
     </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>cafestube</id>
+            <url>https://repo.cafestu.be/maven-public</url>
+        </repository>
+    </distributionManagement>
 
     <reporting>
         <plugins>
@@ -80,7 +73,7 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>org.patheloper</groupId>
+                <groupId>org.patheloper.cafestube</groupId>
                 <artifactId>pathetic-api</artifactId>
                 <version>2.4.6</version>
                 <scope>provided</scope>

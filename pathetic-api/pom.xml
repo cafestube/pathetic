@@ -6,7 +6,7 @@
 
     <parent>
         <artifactId>pathetic-main</artifactId>
-        <groupId>org.patheloper</groupId>
+        <groupId>org.patheloper.cafestube</groupId>
         <version>2.4.6</version>
     </parent>
 
