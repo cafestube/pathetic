@@ -7,7 +7,7 @@
     <groupId>org.patheloper.cafestube</groupId>
     <artifactId>pathetic-main</artifactId>
     <packaging>pom</packaging>
-    <version>2.4.6</version>
+    <version>3.0</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -20,8 +20,8 @@
         <module>pathetic-example</module>
         <module>pathetic-mapping</module>
         <module>pathetic-nms</module>
-        <module>pathetic-model</module>
         <module>pathetic-nms/paper</module>
+        <module>pathetic-model</module>
     </modules>
 
     <distributionManagement>
@@ -36,7 +36,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.10.0</version>
                 <configuration>
                     <reportOutputDirectory>${project.reporting.outputDirectory}/myoutput</reportOutputDirectory>
                     <destDir>myapidocs</destDir>
@@ -75,7 +75,7 @@
             <dependency>
                 <groupId>org.patheloper.cafestube</groupId>
                 <artifactId>pathetic-api</artifactId>
-                <version>2.4.6</version>
+                <version>3.0</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
@@ -88,7 +88,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.10.0</version>
                 <configuration>
                     <source>8</source>
                     <reportOutputDirectory>../</reportOutputDirectory>
@@ -108,6 +108,11 @@
                             <name>default</name>
                             <placement>a</placement>
                             <head>Default:</head>
+                        </tag>
+                        <tag>
+                            <name>depending</name>
+                            <placement>a</placement>
+                            <head>Depends on:</head>
                         </tag>
                     </tags>
                 </configuration>
